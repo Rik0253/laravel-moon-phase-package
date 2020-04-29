@@ -357,7 +357,7 @@ class Moonphase
      * @param string $name
      * @return float
      */
-    public function getPhaseData(string $name): ?float
+    public function getPhaseData(string $name): ?string
     {
         $phases = [
             'new_moon',
@@ -374,7 +374,7 @@ class Moonphase
             $this->phasehunt();
         }
 
-        return $this->quarters[array_flip($phases)[$name]] ?? null;
+        return date('Y-m-d H:i:s',$this->quarters[array_flip($phases)[$name]]) ?? null;
     }
 
     /**
@@ -384,7 +384,7 @@ class Moonphase
      *
      * @return string
      */
-    public function phase_name(): string
+    public function gethaseName(): string
     {
         $names = [
             'New Moon',
