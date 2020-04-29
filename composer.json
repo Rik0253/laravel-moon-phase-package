@@ -1,0 +1,29 @@
+{
+    "name": "rik0253/moon-phase",
+    "description": "It gives moon-phases according to date given.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rik0253",
+            "email": "sidd89@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Rik0253\\Moonphase\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rik0253\\Moonphase\\MoonphaseServiceProvider"
+            ],
+            "aliases": {
+                "Moonphase": "Rik0253\\Moonphase\\Moonphase"
+            }
+        }
+    }
+}
