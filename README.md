@@ -4,6 +4,7 @@ MoonPhase is a PHP class for calculating the phase of the Moon, and other relate
 
 ## Installation
 
+composer require rik0253/moon-phase
 
 
 ## Usage
