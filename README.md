@@ -18,14 +18,14 @@ Create an instance of the class by 'new Moonphase('YYYY-MM-DD');', supplying a d
  - `getMoonData('diameter')`: the angular diameter subtended by the Moon as seen by an observer at the centre of the Earth (degrees).
  - `getMoonData('sundistance')`: the distance to the Sun (kilometres).
  - `getMoonData('sundiameter')`: the angular diameter subtended by the Sun as seen by an observer at the centre of the Earth (degrees).
- - `getPhaseData('new_moon')`: the time of the last New Moon (UNIX timestamp).
- - `getPhaseData('next_new_moon')`: the time of the next New Moon (UNIX timestamp).
- - `getPhaseData('full_moon')`: the time of the Full Moon in the current lunar cycle (UNIX timestamp).
- - `getPhaseData('next_full_moon')`: the time of the next Full Moon in the current lunar cycle (UNIX timestamp).
- - `getPhaseData('first_quarter')`: the time of the first quarter in the current lunar cycle (UNIX timestamp).
- - `getPhaseData('next_first_quarter')`: the time of the next first quarter in the current lunar cycle (UNIX timestamp).
- - `getPhaseData('last_quarter')`: the time of the last quarter in the current lunar cycle (UNIX timestamp).
- - `getPhaseData('next_last_quarter')`: the time of the next last quarter in the current lunar cycle (UNIX timestamp).
+ - `getPhaseData('new_moon')`: the time of the last New Moon (DateTime).
+ - `getPhaseData('next_new_moon')`: the time of the next New Moon (DateTime).
+ - `getPhaseData('full_moon')`: the time of the Full Moon in the current lunar cycle (DateTime).
+ - `getPhaseData('next_full_moon')`: the time of the next Full Moon in the current lunar cycle (DateTime).
+ - `getPhaseData('first_quarter')`: the time of the first quarter in the current lunar cycle (DateTime).
+ - `getPhaseData('next_first_quarter')`: the time of the next first quarter in the current lunar cycle (DateTime).
+ - `getPhaseData('last_quarter')`: the time of the last quarter in the current lunar cycle (DateTime).
+ - `getPhaseData('next_last_quarter')`: the time of the next last quarter in the current lunar cycle (DateTime).
  - `getPhaseName()`: the [phase name](http://aa.usno.navy.mil/faq/docs/moon_phases.php).
 
 ### Example
@@ -35,7 +35,7 @@ Create an instance of the class by 'new Moonphase('YYYY-MM-DD');', supplying a d
 	$age = round($moon->get('age'), 1);
 	$stage = $moon->phase() < 0.5 ? 'waxing' : 'waning';
 	$distance = round($moon->get('distance'), 2);
-	$next = gmdate('G:i:s, j M Y', $moon->get_phase('next_new_moon'));
+	$next = $moon->get_phase('next_new_moon');
 	echo "The moon is currently $age days old, and is therefore $stage. ";
 	echo "It is $distance km from the centre of the Earth. ";
 	echo "The next new moon is at $next.";

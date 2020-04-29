@@ -384,7 +384,7 @@ class Moonphase
      *
      * @return string
      */
-    public function gethaseName(): string
+    public function getPhaseName(): string
     {
         $names = [
             'New Moon',
