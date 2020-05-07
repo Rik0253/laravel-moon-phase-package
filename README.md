@@ -26,7 +26,7 @@ Create an instance of the class by 'new Moonphase('YYYY-MM-DD');', supplying a d
  - `getPhaseData('next_first_quarter')`: the time of the next first quarter in the current lunar cycle (DateTime).
  - `getPhaseData('last_quarter')`: the time of the last quarter in the current lunar cycle (DateTime).
  - `getPhaseData('next_last_quarter')`: the time of the next last quarter in the current lunar cycle (DateTime).
- - `getPhaseName()`: the [phase name](http://aa.usno.navy.mil/faq/docs/moon_phases.php).
+ - `getPhaseName()`: the phase name.
 
 ### Example
 
@@ -35,7 +35,8 @@ Create an instance of the class by 'new Moonphase('YYYY-MM-DD');', supplying a d
 	$age = round($moon->get('age'), 1);
 	$stage = $moon->phase() < 0.5 ? 'waxing' : 'waning';
 	$distance = round($moon->get('distance'), 2);
-	$next = $moon->get_phase('next_new_moon');
+	$next = $moon->getPhaseData('next_new_moon');
+	$phaseName = $moon->getPhaseName();
 	echo "The moon is currently $age days old, and is therefore $stage. ";
 	echo "It is $distance km from the centre of the Earth. ";
 	echo "The next new moon is at $next.";
