@@ -379,8 +379,8 @@ class Moonphase
 
     /**
      * Get current phase name
-     *     There are eight phases, evenly split.
-     *     A "New Moon" occupies the 1/16th phases either side of phase = 0, and the rest follow from that.
+     * There are eight phases, evenly split.
+     * A "New Moon" occupies the 1/16th phases either side of phase = 0, and the rest follow from that.
      *
      * @return string
      */
