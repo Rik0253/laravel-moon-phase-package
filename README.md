@@ -1,6 +1,7 @@
-# A Laravel Package class for calculating the phase of the Moon.
+# A Laravel Package class for calculating the phase of the Moon and you can get the moon rise and set time also.
 
 MoonPhase is a PHP class for calculating the phase of the Moon, and other related variables. It is based on [Moontool for Windows](http://www.fourmilab.ch/moontoolw/).
+Moon Rise/Set time is based on (https://dxprog.com/entry/calculate-moon-rise-and-set-in-php) .
 
 ## Installation
 
@@ -28,6 +29,12 @@ Create an instance of the class by 'new Moonphase('YYYY-MM-DD');', supplying a d
  - `getPhaseData('next_last_quarter')`: get the time of the next last quarter in the current lunar cycle (DateTime).
  - `getPhaseName()`: get the phase name.
 
+## New Usage
+
+Now you can get the moon rise and set time in unix timestamp. You just need to access the property of the object:
+ - `getMoonTimes('latitude','logitude')`: get the time of moon rise and moon set (Unix timestamp).
+
+
 ### Example
 
 	//create an instance of the class, and use the current time
@@ -40,6 +47,12 @@ Create an instance of the class by 'new Moonphase('YYYY-MM-DD');', supplying a d
 	echo "The moon is currently $age days old, and is therefore $stage. ";
 	echo "It is $distance km from the centre of the Earth. ";
 	echo "The next new moon is at $next.";
+	//To get the moon rise/set time
+	$moonTime = getMoonTimes(22.5655,88.3653);
+	echo "Moon rise at ".date('Y-m-d H:i',strtotime($moonTime->moonrise));	
+	echo "Moon set at ".date('Y-m-d H:i',strtotime($moonTime->moonset));	
+
+
 
 ## Help
 
