@@ -49,8 +49,8 @@ Now you can get the moon rise and set time in unix timestamp. You just need to a
 	echo "The next new moon is at $next.";
 	//To get the moon rise/set time
 	$moonTime = getMoonTimes(22.5655,88.3653);
-	echo "Moon rise at ".date('Y-m-d H:i',strtotime($moonTime->moonrise));	
-	echo "Moon set at ".date('Y-m-d H:i',strtotime($moonTime->moonset));	
+	echo "Moon rise at ".date('Y-m-d H:i A',strtotime($moonTime->moonrise));	
+	echo "Moon set at ".date('Y-m-d H:i A',strtotime($moonTime->moonset));	
 
 
 
